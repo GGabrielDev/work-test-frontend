@@ -1,15 +1,22 @@
 import React, {
   useState,
+  useEffect,
   ChangeEventHandler,
   VoidFunctionComponent,
 } from "react";
 import { NavLink } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
+import { getToken } from "../utils/jwtHelpers";
+import { login } from "../app/store/slices/authThunk";
+import history from "../utils/history";
 
 const Login: VoidFunctionComponent = () => {
   const [formData, setFormData] = useState({
     email: "",
     password: "",
   });
+  const dispatch = useDispatch();
+  // const { token, loading } = useSelector((state) => state.auth);
 
   const handleChange: (input: string) => ChangeEventHandler<HTMLInputElement> =
     (input) => (e) => {

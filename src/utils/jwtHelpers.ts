@@ -1,4 +1,4 @@
-export const getToken: () => string | undefined = () => {
+export const getToken: () => string | null = () => {
 	return localStorage.getItem('token');
 }
 

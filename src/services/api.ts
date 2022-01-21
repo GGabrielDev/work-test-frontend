@@ -1,6 +1,4 @@
-import axios, { HeadersDefaults } from "axios";
-
-type AuthorizationHeaders = HeadersDefaults & { autorization: string };
+import axios from "axios";
 
 const baseURL = "http://localhost:8080/";
 
